@@ -58,7 +58,7 @@ const Footer = () => {
                                 </Link>
                             </div>
                             <p class="mt-8 text-base leading-6 text-center text-gray-400">
-                                © 2021 SomeCompany, Inc. All rights reserved.
+                                © 2023 Manufacturer, Inc. All rights reserved.
                             </p>
                         </div>
                     </section>
