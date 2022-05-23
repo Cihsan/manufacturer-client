@@ -1,8 +1,8 @@
 import React from 'react';
-import DashBoard from '../DashBoard/DashBoard';
+import Footer from '../../Shared/Footer';
 import Banner from '../Home/Banner';
 import Blog from './Blog';
-import SomeTry from './SomeTry';
+import Reviews from './Reviews';
 import Summary from './Summary';
 import Tools from './Tools';
 
@@ -10,12 +10,12 @@ import Tools from './Tools';
 const Home = () => {
     return (
         <div className='mx-auto px-12'>
-        <Banner/>
-        <Summary/>
-        <Blog/>
-        <SomeTry/>
-        <Tools/>
-        <DashBoard/>
+            <Banner />
+            <Summary />
+            <Blog />
+            <Reviews />
+            <Tools />
+            <Footer />
         </div>
     );
 };

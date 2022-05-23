@@ -1,4 +1,4 @@
-# manufacturer-website
+# Manufacturer-website
 
 This is project design like manufacturer or factory site using react app[Live-Site](https://black.com).
 

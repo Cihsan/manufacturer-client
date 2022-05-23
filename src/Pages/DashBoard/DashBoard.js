@@ -10,14 +10,11 @@ const DashBoard = () => {
                 <input id="dashboard" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col">
                     {/* Page content here  */}
-                    <Outlet/>
+                    <Outlet />
                 </div>
                 <div class="drawer-side">
                     <label for="dashboard" class="drawer-overlay"></label>
                     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        {/* Sidebar content here  */}
-                        {/* <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li> */}
                         <div class="flex space-2 items-center border-b-2 pb-4">
                             <div>
                                 {/* user Image */}
@@ -29,7 +26,7 @@ const DashBoard = () => {
                             </div>
                         </div>
                         <div class="mt-8">
-                            <ul class="space-y-10">
+                            <ul class="space-y-2">
                                 <li>
                                     <Link to="/dashboard" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
                                         <MdAddShoppingCart className='text-2xl mr-3' />
@@ -46,7 +43,6 @@ const DashBoard = () => {
                                         <AiOutlineSetting className='text-2xl mr-3' />
                                         My Profile</Link>
                                 </li>
-
                             </ul>
                         </div>
                     </ul>

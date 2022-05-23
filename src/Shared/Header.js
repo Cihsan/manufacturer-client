@@ -24,6 +24,7 @@ const Header = () => {
                             <li><NavLink to='/home'>Home</NavLink></li>
                             <li><NavLink to='/blogs'>Blogs</NavLink></li>
                             <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                            <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
 
                             {
                                 user ?
@@ -48,6 +49,8 @@ const Header = () => {
                         <li><NavLink to='/home'>Home</NavLink></li>
                         <li><NavLink to='/blogs'>Blogs</NavLink></li>
                         <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                        <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
+
                         {
                             user ?
                                 <div class="dropdown dropdown-end">
