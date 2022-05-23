@@ -2,7 +2,6 @@ import React from 'react';
 import { AiOutlineBarChart } from 'react-icons/ai';
 import { RiUserSettingsFill } from 'react-icons/ri';
 import { CgUserlane } from 'react-icons/cg';
-import { GrCompliance } from 'react-icons/gr';
 import { FaProductHunt } from 'react-icons/fa';
 const Summary = () => {
     return (

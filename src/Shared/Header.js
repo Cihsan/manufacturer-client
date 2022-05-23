@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { AiOutlineMenuUnfold } from 'react-icons/ai';
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import auth from '../firebase_init';
 
@@ -18,10 +18,12 @@ const Header = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabindex="0" className="btn btn-ghost lg:hidden">
-                            <AiOutlineMenuUnfold className='text-2xl'/>
+                            <AiOutlineMenuUnfold className='text-2xl' />
                         </label>
                         <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink to='/home'>Home</NavLink></li>
+                            <li><NavLink to='/blogs'>Blogs</NavLink></li>
+                            <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
 
                             {
                                 user ?
@@ -44,7 +46,8 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><NavLink to='/home'>Home</NavLink></li>
-
+                        <li><NavLink to='/blogs'>Blogs</NavLink></li>
+                        <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
                         {
                             user ?
                                 <div class="dropdown dropdown-end">
@@ -59,15 +62,15 @@ const Header = () => {
                                 </div>
                                 : <li><NavLink to='/login'>Login</NavLink></li>
                         }
-                        <div className="navbar-end">
-                            <label tabIndex="1" for="my-drawer-2" className="btn btn-ghost lg:hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                            </label>
-                        </div>
+
                     </ul>
 
                 </div>
-
+                <div className="navbar-end">
+                    <label tabIndex="1" for="dashboard" className="btn btn-ghost lg:hidden">
+                        <AiOutlineMenuFold className='text-2xl' />
+                    </label>
+                </div>
             </div>
 
         </div>

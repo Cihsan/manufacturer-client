@@ -46,7 +46,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
-            <p className='text-center my-10 text-3xl'><Link className='hover:text-primary' to='/blogs'>See More</Link></p>
+            <p className='text-center my-10 text-3xl '><Link className='underline-offset-1 hover:text-primary' to='/blogs'>See More</Link></p>
         </div>
     );
 };

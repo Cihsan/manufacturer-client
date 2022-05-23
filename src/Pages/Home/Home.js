@@ -1,7 +1,10 @@
 import React from 'react';
+import DashBoard from '../DashBoard/DashBoard';
 import Banner from '../Home/Banner';
 import Blog from './Blog';
+import SomeTry from './SomeTry';
 import Summary from './Summary';
+import Tools from './Tools';
 
 
 const Home = () => {
@@ -10,6 +13,9 @@ const Home = () => {
         <Banner/>
         <Summary/>
         <Blog/>
+        <SomeTry/>
+        <Tools/>
+        <DashBoard/>
         </div>
     );
 };
