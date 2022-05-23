@@ -8,6 +8,7 @@ import MyProfile from './Pages/DashBoard/MyProfile';
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import Purchase from './Pages/Purchase/Purchase';
 import Header from './Shared/Header';
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/blogs" element={<AllBlog />}></Route>
-        <Route path="/Portfolio" element={<Portfolio />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
+        <Route path="/purchase" element={<Purchase/>}></Route>
+
         <Route path='/dashboard' element={<DashBoard />}>
           <Route index element={<MyOrders />}></Route>
           <Route path='add-review' element={<AddReview />}></Route>

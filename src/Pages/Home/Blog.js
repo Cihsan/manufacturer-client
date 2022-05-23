@@ -1,6 +1,5 @@
 import React from 'react';
-import { AiFillCaretRight, AiFillPlayCircle, AiOutlineRight } from 'react-icons/ai';
-import { BsArrowRightCircle, BsArrowRightShort } from 'react-icons/bs';
+import { BsArrowRightShort } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {

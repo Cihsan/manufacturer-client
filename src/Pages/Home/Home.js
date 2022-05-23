@@ -16,6 +16,7 @@ const Home = () => {
             <Reviews />
             <Tools />
             <Footer />
+
         </div>
     );
 };
