@@ -25,7 +25,7 @@ const DashBoard = () => {
                                 <p class="text-center text-sm text-indigo-600 mt-1 font-serif">User Role</p>
                             </div>
                         </div>
-                        <div class="mt-8">
+                        <div class="mt-2">
                             <ul class="space-y-2">
                                 <li>
                                     <Link to="/dashboard" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">

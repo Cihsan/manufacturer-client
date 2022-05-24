@@ -15,8 +15,8 @@ const Reviews = () => {
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                     {/* 1 card */}
                     {
-                        reviews.slice(0, 6).reverse().map(review =>
-                            <div class="relative bg-white py-6 px-6 rounded-xl w-96 my-4 shadow-xl">
+                        reviews.slice(-0).reverse().slice(0,6).map(review =>
+                            <div key={review._id} class="relative bg-white py-6 px-6 rounded-xl w-96 my-4 shadow-xl">
                                 <div class="mt-8">
                                     <div className='flex items-center'>
                                         <img src={review.img}

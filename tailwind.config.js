@@ -14,8 +14,14 @@ module.exports = {
           "base-100": "#ffffff",
         },
       },
-      // "dark",
-      "cupcake",
+      {
+        mydark: {
+          "primary": "#3ABFF8",
+          "secondary": "#828DF8",
+          "accent": "#F4C152",
+          "neutral": "#1D283A",
+        },
+      },
     ],
   },
   plugins: [require("daisyui")],
