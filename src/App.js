@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllBlog from './Pages/AllBlog/AllBlog';
@@ -12,11 +13,13 @@ import Purchase from './Pages/Purchase/Purchase';
 import Header from './Shared/Header';
 
 function App() {
+  const[dark,setDark]=useState(false)
+  console.log(dark);
   return (
-    <div className="App">
-      <Header></Header>
+    <div className="App" data-theme={dark ? "light" : "dark"}>
+      <Header dark={dark} setDark={setDark}></Header>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/blogs" element={<AllBlog />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
@@ -28,6 +31,7 @@ function App() {
           <Route path='my-profile' element={<MyProfile />}></Route>
 
         </Route>
+        
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>

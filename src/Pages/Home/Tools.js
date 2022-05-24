@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { BsCheck2Circle } from 'react-icons/bs';
 
 const Tools = () => {
-    const [tools, setTools] = useState([])
+    /* const [tools, setTools] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/')
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [])
+    }, []) */
     return (
         <div>
             {/* <div>

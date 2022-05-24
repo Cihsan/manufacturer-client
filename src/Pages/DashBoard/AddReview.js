@@ -1,31 +1,52 @@
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const AddReview = () => {
-    const reviews = (event) => {
-        event.preventDefault()
-        const name = event.target.name.value
-        const review = event.target.review.value
-        const ratings = event.target.ratings.value
-        const img = event.target.img.value
-        const submit = { name, review, ratings, img }
-        fetch('http://localhost:5000/review-post', {
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const imgkey = '496c910d299b68d853a1aac1a435c6f2'
+    const onSubmit = async data => {
+        const image = data.img[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imgkey}`;
+        fetch(url, {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(submit)
+            body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    toast(`Review Added Successfuly`)
+            .then(result => {
+                if (result.success) {
+
+                    const img = result.data.url;
+                    const reviewsubmit = {
+                        name: data.name,
+                        review: data.review,
+                        rating: data.rating,
+                        img: img
+                    }
+                    fetch('http://localhost:5000/review-post', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(reviewsubmit)
+                    })
+                        .then(res => res.json())
+                        .then(inserted => {
+                            if (inserted) {
+                                toast.success('Review Successfuly Added')
+                                reset();
+                            }
+                            else {
+                                toast.error('Failed to add Review');
+                            }
+                        })
+
                 }
-                else {
-                    toast.error(`Already have and appointment`)
-                }
+
             })
-        event.target.reset()
     }
     return (
         <div>
@@ -37,24 +58,33 @@ const AddReview = () => {
 
                             <div class="w-full bg-white p-5 rounded-lg lg:rounded-l-none">
                                 <h3 class="text-2xl text-center">Write Your Review Here</h3>
-                                <form onSubmit={reviews} class="px-8 pb-8 mb-4 bg-white rounded">
+                                <form onSubmit={handleSubmit(onSubmit)} class="px-8 pb-8 mb-4 bg-white rounded">
                                     <div class="mb-4">
                                         <label class="mb-2 w-6/12 text-sm font-bold text-gray-700">
                                             Name
                                         </label>
                                         <input
+                                            {...register("name", {
+                                                required: { value: true, message: 'Name is Required' }
+                                            })}
                                             class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                             name='name'
                                             type="text"
                                             placeholder="Your Name"
                                             required
                                         />
+                                        <label className="label">
+                                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                        </label>
                                     </div>
                                     <div class="mb-4">
                                         <label class="block mb-2 text-sm font-bold text-gray-700">
                                             Review
                                         </label>
                                         <textarea
+                                            {...register("review", {
+                                                required: { value: true, message: 'review is Required' }
+                                            })}
                                             class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                             placeholder="Your Review"
                                             rows="3"
@@ -73,6 +103,9 @@ const AddReview = () => {
                                                 placeholder="Your image"
                                                 name='img'
                                                 required
+                                                {...register("img", {
+                                                    required: { value: true, message: 'image is Required' }
+                                                })}
                                             />
                                         </div>
                                         <div className=''>
@@ -80,7 +113,9 @@ const AddReview = () => {
                                                 <label class="mb-2 text-sm font-bold text-gray-700">
                                                     Ratings
                                                 </label>
-                                                <select className='w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline' name="ratings" required>
+                                                <select className='w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline' name="ratings" required {...register("rating", {
+                                                    required: { value: true, message: 'Rating is Required' }
+                                                })}>
                                                     <option value="3.5" selected>3.5</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -107,7 +142,7 @@ const AddReview = () => {
                     </div>
                 </div>
 
-               
+
             </div>
         </div>
     );
