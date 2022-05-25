@@ -95,11 +95,13 @@ const AddReview = () => {
                                     </div>
                                     <div className='flex gap-5'>
                                         <div class="">
-                                            <label class="mb-2 text-sm font-bold text-gray-700">
-                                                Image
-                                            </label>
                                             <input
-                                                class="px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                                class="block w-full text-sm text-slate-500
+                                                file:mr-4 file:py-2 file:px-4
+                                                file:rounded-full file:border-0
+                                                file:text-sm file:font-semibold
+                                                file:bg-violet-50 file:text-violet-700
+                                                hover:file:bg-violet-100"
                                                 type="file"
                                                 placeholder="Your image"
                                                 name='img'

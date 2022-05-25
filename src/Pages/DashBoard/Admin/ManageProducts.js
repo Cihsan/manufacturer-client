@@ -1,14 +1,39 @@
 import React, { useEffect, useState } from 'react';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch("product.json")
+        fetch('http://localhost:5000/product-get')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [products])
+
+    const deletebtn = id => {
+        const ask = window.confirm('Are sure to delete')
+        if (ask) {
+            console.log(id)
+            const url=`http://localhost:5000/product-del/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        console.log('deleted')
+                        const remaining = products.filter(product => product._id !== id)
+                        setProducts(remaining)
+                        toast('Product Deleted Form Here');
+                    }
+                    else{
+                        toast.error('Product Deleted Failed');
+                    }
+                })
+        }
+    }
     return (
         <div>
+            <ToastContainer/>
             <h1>Manage Products {products.length}</h1>
             <section class="">
                 <div class="container px-6 mx-auto">
@@ -26,7 +51,7 @@ const ManageProducts = () => {
                                 <div class="">
                                     
 
-                                    <span class="mx-4 ">Name{product.name}</span>
+                                    <span class="mx-4 font-bold">{product.name}</span>
                                 </div>
 
                                 <div class="flex items-center">
@@ -50,11 +75,11 @@ const ManageProducts = () => {
                                 <div class="flex items-center">
                                     
 
-                                    <span class="mx-4 ">${product.price}</span>
+                                    <span class="mx-4 ">$ {product.price}</span>
                                 </div>
                             </div>
 
-                            <button class="w-full px-4 py-2 mt-5 font-medium tracking-wide text-accent capitalize bg-white hover:bg-red-400 hover:text-white rounded-md ">
+                            <button onClick={() => deletebtn(product._id)} class="w-full px-4 py-2 mt-5 font-medium tracking-wide text-accent capitalize bg-white hover:bg-red-400 hover:text-white rounded-md ">
                                 Delete
                             </button>
                         </div>
