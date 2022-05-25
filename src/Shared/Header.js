@@ -6,7 +6,7 @@ import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import auth from '../firebase_init';
 
-const Header = ({dark,setDark}) => {
+const Header = ({ dark, setDark }) => {
     const [user] = useAuthState(auth);
     //console.log(user);
     const logOut = () => {
@@ -51,7 +51,9 @@ const Header = ({dark,setDark}) => {
                         <li><NavLink to='/blogs'>Blogs</NavLink></li>
                         <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
                         <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
-                        <label class="swap swap-rotate" onClick={()=>setDark(dark)}>
+                        <li><NavLink to='/login'>Login</NavLink></li>
+                        <li><NavLink to='/register'>Register</NavLink></li>
+                        <label class="swap swap-rotate" onClick={() => setDark(dark)}>
                             {/* this hidden checkbox controls the state */}
                             <input type="checkbox" />
 

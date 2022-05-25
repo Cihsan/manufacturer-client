@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Login from './Pages/AccessUser/Login';
+import ProtectedPath from './Pages/AccessUser/ProtectedPath';
+import Register from './Pages/AccessUser/Register';
 import AllBlog from './Pages/AllBlog/AllBlog';
 import AddReview from './Pages/DashBoard/AddReview';
 import DashBoard from './Pages/DashBoard/DashBoard';
@@ -24,8 +27,10 @@ function App() {
         <Route path="/blogs" element={<AllBlog />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/purchase" element={<Purchase/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
 
-        <Route path='/dashboard' element={<DashBoard />}>
+        <Route path='/dashboard' element={<ProtectedPath><DashBoard /></ProtectedPath>  }>
           <Route index element={<MyOrders />}></Route>
           <Route path='add-review' element={<AddReview />}></Route>
           <Route path='my-profile' element={<MyProfile />}></Route>
