@@ -14,6 +14,7 @@ const AddReview = () => {
             method: 'POST',
             body: formData
         })
+        
             .then(res => res.json())
             .then(result => {
                 if (result.success) {

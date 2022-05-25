@@ -10,16 +10,7 @@ const Tools = () => {
     }, []) */
     return (
         <div>
-            {/* <div>
-                <img src="" alt="" />
-                <h3>Tools Name</h3>
-                <p>Tools Description</p>
-                <p>Price</p>
-                <p>min order quantity</p>
-                <p>available quantity</p>
-                <button>Place Order</button>
-            </div> */}
-            {/* component  */}
+           
             <section class="">
                 <div class="container px-6 py-8 mx-auto">
                     <div>

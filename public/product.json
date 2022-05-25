@@ -1,0 +1,43 @@
+[
+    {
+        "img": "https://m.media-amazon.com/images/I/81RlStd-8gL._AC_SX425_.jpg",
+        "name": "Cutting Plier",
+        "desc": "Stock Huge Place Order Any Time",
+        "stock": 1000,
+        "mOrder": 100,
+        "price": 6000
+      },
+    {
+        "img": "https://m.media-amazon.com/images/I/61o3iWa5gnL._AC_UL320_.jpg",
+        "name": "Nose Plier",
+        "desc": "Stock Some Place Order Soon",
+        "stock": 500,
+        "mOrder": 100,
+        "price": 8000
+      },
+      {
+        "img": "https://m.media-amazon.com/images/I/61WxC9Ej-ZL._AC_UL320_.jpg",
+        "name": "Snap Ring Pliers",
+        "desc": "Stock Huge Place Order Any Time",
+        "stock": 500,
+        "mOrder": 100,
+        "price": 12000
+      },
+    {
+        "img": "https://m.media-amazon.com/images/I/6134MZZnV3L._AC_SL1500_.jpg",
+        "name": "Long Reach Pliers",
+        "desc": "Stock Some Place Order Soon",
+        "stock": 500,
+        "mOrder": 100,
+        "price": 7000
+      },
+    {
+        "img": "https://m.media-amazon.com/images/I/61BD7mRGMDL._AC_SX425_.jpg",
+        "name": "Slip Joint Pliers",
+        "desc": "Stock Some Place Order Soon",
+        "stock": 500,
+        "mOrder": 100,
+        "price": 4000
+      }
+]
+    
