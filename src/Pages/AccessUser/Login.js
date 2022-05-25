@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase_init';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [emailPassLogin, emailPassLoginUser, emailPassLoginLoading, emailPassLoginError] = useSignInWithEmailAndPassword(auth);
@@ -14,23 +15,13 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     //return coming path
-    if (userLoginGoogle || emailPassLoginUser || user) {
-        //jwt
-        const url = 'http://localhost:5000/login'
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({
-                email: user.email
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => localStorage.setItem("sToken", data.token));
-        navigate(from, { replace: true });
+    const [token] = useToken(emailPassLoginUser || userLoginGoogle);
+    useEffect( () =>{
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
-    }
     //Loading 
     let spinner;
     if (loadingLoginGoogle || emailPassLoginLoading || loading || sending) {

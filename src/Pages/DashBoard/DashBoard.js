@@ -1,9 +1,16 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineSetting } from 'react-icons/ai';
-import { MdAddShoppingCart, MdRateReview } from 'react-icons/md';
+import { IoMdPersonAdd } from 'react-icons/io';
+import { MdAddShoppingCart, MdManageAccounts, MdOutlinePlaylistAdd, MdRateReview } from 'react-icons/md';
+import { RiSecurePaymentFill } from 'react-icons/ri';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase_init';
+import useAdmin from '../../hooks/useAdmin';
 
 const DashBoard = () => {
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin();
     return (
         <div>
             <div class="drawer drawer-mobile">
@@ -26,23 +33,57 @@ const DashBoard = () => {
                             </div>
                         </div>
                         <div class="mt-2">
+                            
                             <ul class="space-y-2">
-                                <li>
-                                    <Link to="/dashboard" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
-                                        <MdAddShoppingCart className='text-2xl mr-3' />
-                                        My Orders</Link>
-                                </li>
-                                <li>
-                                    <Link to="/dashboard/add-review" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
-                                        <MdRateReview className='text-2xl mr-3' />
-                                        Add A Review</Link>
-                                </li>
+                                {
+                                    user && <>
+                                        <li>
+                                            <Link to="/dashboard" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <MdAddShoppingCart className='text-2xl mr-3' />
+                                                My Orders</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/dashboard/add-review" class="flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <MdRateReview className='text-2xl mr-3' />
+                                                Add A Review</Link>
+                                        </li>
 
-                                <li>
-                                    <Link to="/dashboard/my-profile" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
-                                        <AiOutlineSetting className='text-2xl mr-3' />
-                                        My Profile</Link>
-                                </li>
+                                        <li>
+                                            <Link to="/dashboard/my-profile" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <AiOutlineSetting className='text-2xl mr-3' />
+                                                My Profile</Link>
+                                        </li>
+                                    </>
+                                }
+                                {
+                                    admin && <>
+                                        <li>
+                                            <Link to="/dashboard/my-profile" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <AiOutlineSetting className='text-2xl mr-3' />
+                                                My Profile</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/dashboard/manage-products" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <MdManageAccounts className='text-2xl mr-3' />
+                                                Manage Products</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/dashboard/add-product" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <MdOutlinePlaylistAdd className='text-2xl mr-3' />
+                                                Add Product</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/dashboard/make-admin" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <IoMdPersonAdd className='text-2xl mr-3' />
+                                                Make Admin</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/dashboard/manage-all-orders" class="flex items-centerx text-sm font-semibold text-gray-500 hover:text-indigo-600 transition duration-200">
+                                                <RiSecurePaymentFill className='text-2xl mr-3' />
+                                                Manage All Orders</Link>
+                                        </li>
+                                    </>
+                                }
                             </ul>
                         </div>
                     </ul>

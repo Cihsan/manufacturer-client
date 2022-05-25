@@ -6,6 +6,10 @@ import ProtectedPath from './Pages/AccessUser/ProtectedPath';
 import Register from './Pages/AccessUser/Register';
 import AllBlog from './Pages/AllBlog/AllBlog';
 import AddReview from './Pages/DashBoard/AddReview';
+import AddProduct from './Pages/DashBoard/Admin/AddProduct';
+import MakeAdmin from './Pages/DashBoard/Admin/MakeAdmin';
+import ManageAllOrders from './Pages/DashBoard/Admin/ManageAllOrders';
+import ManageProducts from './Pages/DashBoard/Admin/ManageProducts';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrders from './Pages/DashBoard/MyOrders';
 import MyProfile from './Pages/DashBoard/MyProfile';
@@ -34,6 +38,10 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path='add-review' element={<AddReview />}></Route>
           <Route path='my-profile' element={<MyProfile />}></Route>
+          <Route path='add-product' element={<AddProduct />}></Route>
+          <Route path='make-admin' element={<MakeAdmin/>}></Route>
+          <Route path='manage-all-orders' element={<ManageAllOrders />}></Route>
+          <Route path='manage-products' element={<ManageProducts/>}></Route>
 
         </Route>
         
