@@ -1,13 +1,13 @@
-// import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BsCheck2Circle } from 'react-icons/bs';
 
 const Tools = () => {
-    /* const [tools, setTools] = useState([])
+    const [tools, setTools] = useState([])    
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('http://localhost:5000/product-get')
             .then(res => res.json())
             .then(data => setTools(data))
-    }, []) */
+    }, [tools])
     return (
         <div>
            
@@ -18,41 +18,43 @@ const Tools = () => {
                     </div>
 
                     <div class="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        <div class="px-6 py-4 rounded-lg bg-gray-100">
+                        {
+                            tools.slice(0,8).map(tool=>
+                                <div class="px-6 py-4 rounded-lg bg-gray-100">
                             <div class="avatar">
                                 <div class="rounded mx-auto">
-                                    <img src="https://api.lorem.space/image/face?hash=88560" alt=''/>
+                                    <img src={tool.img} alt=''/>
                                 </div>
                             </div>
                             <div class="mt-8 space-y-2">
                                 <div class="flex items-center">
-                                    <BsCheck2Circle />
+                                    
 
-                                    <span class="mx-4 ">All limited links</span>
+                                    <span class="mx-4 font-bold">{tool.name}</span>
                                 </div>
 
                                 <div class="flex items-center">
-                                    <BsCheck2Circle />
+                                    
 
-                                    <span class="mx-4 ">Own analytics platform</span>
+                                    <span title='Description' class="mx-4 "><span className='font-semibold'>Desc.</span> {tool.desc}</span>
                                 </div>
 
                                 <div class="flex items-center">
-                                    <BsCheck2Circle />
+                                    
 
-                                    <span class="mx-4 ">Chat support</span>
+                                    <span class="mx-4 "><span className='font-semibold'>Stock:</span> {tool.stock}</span>
                                 </div>
 
                                 <div class="flex items-center">
-                                    <BsCheck2Circle />
+                                    
 
-                                    <span class="mx-4 ">Optimize hashtags</span>
+                                    <span class="mx-4 "><span className='font-semibold'>Min. Order:</span> {tool.mOrder}</span>
                                 </div>
 
                                 <div class="flex items-center">
-                                    <BsCheck2Circle />
+                                    
 
-                                    <span class="mx-4 ">Unlimited users</span>
+                                    <span class="mx-4 "><span className='font-semibold'>$</span> {tool.price}</span>
                                 </div>
                             </div>
 
@@ -60,6 +62,8 @@ const Tools = () => {
                                 Choose plan
                             </button>
                         </div>
+                                )
+                        }
 
                     </div>
                 </div>

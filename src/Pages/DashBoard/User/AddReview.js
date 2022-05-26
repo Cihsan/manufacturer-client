@@ -133,7 +133,7 @@ const AddReview = () => {
 
                                     <div class="mb-6 text-center">
                                         <input
-                                            class="w-full px-4 cursor-pointer py-2 font-bold text-white bg-primary rounded hover:bg-secondary focus:outline-none focus:shadow-outline"
+                                            class="w-full px-4 cursor-pointer py-2 font-bold text-white bg-primary rounded hover:bg-accent focus:outline-none focus:shadow-outline"
                                             type="submit"
                                             value='Submit Review'
                                         />

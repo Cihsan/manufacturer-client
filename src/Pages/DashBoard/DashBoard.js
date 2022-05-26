@@ -12,7 +12,7 @@ const DashBoard = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin();
     return (
-        <div>
+        <div className=''>
             <div class="drawer drawer-mobile">
                 <input id="dashboard" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col">

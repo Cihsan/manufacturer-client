@@ -16,7 +16,7 @@ const Reviews = () => {
                     {/* 1 card */}
                     {
                         reviews.slice(-0).reverse().slice(0,6).map(review =>
-                            <div key={review._id} class="relative bg-white py-6 px-6 rounded-xl w-96 my-4 shadow-xl">
+                            <div key={review._id} class="relative bg-white py-6 px-6 rounded-xl my-4 shadow-xl">
                                 <div class="mt-8">
                                     <div className='flex items-center'>
                                         <img src={review.img}

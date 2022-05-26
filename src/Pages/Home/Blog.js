@@ -8,7 +8,7 @@ const Blog = () => {
             <h1 className='my-12 text-center text-5xl font-bold'>Blog Hilights</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-5 justify-center items-center'>
                 <div class="card rounded-none">
-                    <img src="https://api.lorem.space/image/shoes?w=400&h=225" className='rounded-md' alt="Shoes" />
+                    <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" className='rounded-md' alt="Shoes" />
                     <div class="">
                         <h2 class="card-title hover:text-secondary text-2xl">
                             How will you improve the performance of a React App
@@ -21,7 +21,7 @@ const Blog = () => {
                     </div>
                 </div>
                 <div class="card rounded-none">
-                    <img src="https://api.lorem.space/image/shoes?w=400&h=225" className='rounded-md' alt="Shoes" />
+                    <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" className='rounded-md' alt="Shoes" />
                     <div class="">
                         <h2 class="card-title hover:text-secondary text-2xl">
                             What are the different ways to manage a state in a React app
@@ -34,7 +34,7 @@ const Blog = () => {
                     </div>
                 </div>
                 <div class="card rounded-none">
-                    <img src="https://api.lorem.space/image/shoes?w=400&h=225" className='rounded-md' alt="Shoes" />
+                    <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" className='rounded-md' alt="Shoes" />
                     <div class="">
                         <h2 class="card-title hover:text-secondary text-2xl">
                             What is a unit test? Why should write unit tests?

@@ -1,13 +1,18 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../../firebase_init';
 
 const UpdateProfile = () => {
+   const [user] = useAuthState(auth);
    const profileUpdate = (event) => {
       event.preventDefault()
       const submit = { 
+         name:user.displayName,
+         email:user.email,
          date:event.target.date.value,
          phone:event.target.phone.value,
-         study:event.target.phone.value,
+         study:event.target.study.value,
          country:event.target.country.value,
          state:event.target.state.value,
          zip:event.target.zip.value,

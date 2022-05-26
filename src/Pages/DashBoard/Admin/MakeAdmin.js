@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase_init';
 
 const MakeAdmin = () => {
+    const [user] = useAuthState(auth);
+    const {email}=user
     const [users, setusers] = useState([])
-    console.log(users.length);
     useEffect(() => {
         const url = 'http://localhost:5000/user'
         fetch(url, {
@@ -18,13 +21,17 @@ const MakeAdmin = () => {
     }, [users])
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/`, {
+        console.log(email);
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => {
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+
+            /* .then(res => {
                 if(res.status === 403){
                     toast.error('Failed to Make an admin');
                 }
@@ -34,7 +41,7 @@ const MakeAdmin = () => {
                     toast.success(`Successfully made an admin`);
                 }
 
-            })
+            }) */
     }
     return (
         <div>
@@ -43,7 +50,7 @@ const MakeAdmin = () => {
                 <table class="table w-full">
                     <thead>
                         <tr>
-                            <th>User Name</th>
+                            <th>User Role</th>
                             <th>Email</th>
                             <th className='text-center'>Action</th>
                         </tr>
@@ -55,8 +62,7 @@ const MakeAdmin = () => {
                                     <td>
                                         <div class="flex items-center space-x-3">
                                             <div>
-                                                <div class="font-bold">user</div>
-                                                <div class="text-sm opacity-50">Role</div>
+                                                <div class="font-bold">{user.role}</div>
                                             </div>
                                         </div>
                                     </td>
