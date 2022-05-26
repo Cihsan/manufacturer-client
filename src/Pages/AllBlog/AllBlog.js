@@ -25,9 +25,10 @@ const AllBlog = () => {
                                             </div>
                                         </div>
                                         <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">How will you improve the performance of a React Application</Link>
-                                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                                                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+                                            <p class="mt-2 text-gray-600">Not to use Inline Function like arrow funtion in OnCLick <br />
+                                                Not to use Index as Key when use map in array <br />
+                                                Not to use large image in your react application <br />
+                                                Use Fragments to wrap HTML Element like <code><></></code></p>
                                         </div>
                                         <div class="flex items-center justify-between mt-4">
                                             <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
@@ -53,6 +54,92 @@ const AllBlog = () => {
                                             </div>
                                         </div>
                                         <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">What are the different ways to manage a state in a React application?</Link>
+                                            <p class="mt-2 text-gray-600">There are five different ways to manage a state in a React application <br />
+                                                Communication State <br />
+                                                Data State <br />
+                                                Control State <br />
+                                                Session State <br />
+                                                Location State</p>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-4">
+                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
+                                            <div>
+                                                <Link to="#" class="flex items-center"><img
+                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
+                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* POst  */}
+                                <div class="mt-6">
+                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
+                                            2022</span>
+                                            <div>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">Why you do not set the state directly in React</Link>
+                                            <p class="mt-2 text-gray-600">set the state directly in React application again and again trigger to re-render unless conditional render is implemented</p>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-4">
+                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
+                                            <div>
+                                                <Link to="#" class="flex items-center"><img
+                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
+                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* POst  */}
+                                <div class="mt-6">
+                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
+                                            2022</span>
+                                            <div>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">What is a unit test? Why should write unit tests?</Link>
+                                            <p class="mt-2 text-gray-600">Unit Testing is a software testing technique or meethod <br />
+                                                ensure code correctness <br />
+                                                fix bug if any <br />
+                                                every steps check and verify</p>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-4">
+                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
+                                            <div>
+                                                <Link to="#" class="flex items-center"><img
+                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
+                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* POst  */}
+                                <div class="mt-6">
+                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
+                                            2022</span>
+                                            <div>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
+                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">You have an array of products, How will you implement a search to find products by name?</Link>
                                             <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                                 Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                                 reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
@@ -81,90 +168,6 @@ const AllBlog = () => {
                                             </div>
                                         </div>
                                         <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">How does prototypical inheritance work</Link>
-                                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                                                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-4">
-                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
-                                            <div>
-                                                <Link to="#" class="flex items-center"><img
-                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
-                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
-                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* POst  */}
-                                <div class="mt-6">
-                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
-                                            2022</span>
-                                            <div>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">Why you do not set the state directly in React</Link>
-                                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                                                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-4">
-                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
-                                            <div>
-                                                <Link to="#" class="flex items-center"><img
-                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
-                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
-                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* POst  */}
-                                <div class="mt-6">
-                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
-                                            2022</span>
-                                            <div>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">What is a unit test? Why should write unit tests?</Link>
-                                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                                                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-4">
-                                            <Link to="#" class="text-blue-500 hover:underline">Read more</Link>
-                                            <div>
-                                                <Link to="#" class="flex items-center"><img
-                                                    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
-                                                    alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
-                                                    <h1 class="font-bold text-gray-700 hover:underline">Chy Ihsan</h1>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* POst  */}
-                                <div class="mt-6">
-                                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-                                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">May 21,
-                                            2022</span>
-                                            <div>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 ">Tips</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500 mx-2">React</Link>
-                                                <Link to="#" class="px-2 py-1 font-bold text-gray-100 bg-accent rounded hover:bg-gray-500">Javascript</Link>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">You have an array of products, How will you implement a search to find products by name?</Link>
                                             <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                                 Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                                 reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
