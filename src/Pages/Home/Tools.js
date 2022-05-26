@@ -4,7 +4,7 @@ import { BsCheck2Circle } from 'react-icons/bs';
 const Tools = () => {
     const [tools, setTools] = useState([])    
     useEffect(() => {
-        fetch('http://localhost:5000/product-get')
+        fetch('https://safe-inlet-78940.herokuapp.com/product-get')
             .then(res => res.json())
             .then(data => setTools(data))
     }, [tools])

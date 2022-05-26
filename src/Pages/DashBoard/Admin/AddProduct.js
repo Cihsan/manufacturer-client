@@ -28,7 +28,7 @@ const AddProduct = () => {
                         price: data.price,
                         img: img
                     }
-                    fetch('http://localhost:5000/product-post', {
+                    fetch('https://safe-inlet-78940.herokuapp.com/product-post', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

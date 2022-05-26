@@ -19,7 +19,7 @@ const UpdateProfile = () => {
          link:event.target.link.value}
       
       console.log(submit);
-       fetch('http://localhost:5000/profile-post', {
+       fetch('https://safe-inlet-78940.herokuapp.com/profile-post', {
          method: 'POST',
          headers: {
             'content-type': 'application/json',

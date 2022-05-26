@@ -4,14 +4,14 @@ import 'react-toastify/dist/ReactToastify.css';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/product-get')
+        fetch('https://safe-inlet-78940.herokuapp.com/product-get')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products])
 
     const deletebtn = id => {
             console.log(id)
-            const url = `http://localhost:5000/product-del/${id}`
+            const url = `https://safe-inlet-78940.herokuapp.com/product-del/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

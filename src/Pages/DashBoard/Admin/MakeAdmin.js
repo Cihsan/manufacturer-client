@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     const {email}=user
     const [users, setusers] = useState([])
     useEffect(() => {
-        const url = 'http://localhost:5000/user'
+        const url = 'https://safe-inlet-78940.herokuapp.com/user'
         fetch(url, {
             method: 'GET',
             headers: {
@@ -21,17 +21,14 @@ const MakeAdmin = () => {
     }, [users])
 
     const makeAdmin = () => {
-        console.log(email);
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        //console.log(email);
+        fetch(`https://safe-inlet-78940.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res=>res.json())
-        .then(data=>console.log(data))
-
-            /* .then(res => {
+            .then(res => {
                 if(res.status === 403){
                     toast.error('Failed to Make an admin');
                 }
@@ -41,7 +38,7 @@ const MakeAdmin = () => {
                     toast.success(`Successfully made an admin`);
                 }
 
-            }) */
+            })
     }
     return (
         <div>
@@ -70,8 +67,8 @@ const MakeAdmin = () => {
                                         {user.email}
                                     </td>
                                     <td className='text-center'>
-                                        <button onClick={makeAdmin} className='btn'>Make Admin</button>
-                                        <button className='btn ml-5'>Delete User</button>
+                                        {!user.role&&<button onClick={makeAdmin} className='btn btn-sm'>Make Admin</button>}
+                                        <button className='btn btn-sm ml-5'>Delete User</button>
                                     </td>
                                 </tr>
                             )

@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
             <div >
-                <div className='flex justify-center mx-5 opacity-50'>
+                <div className='flex justify-center mx-5 opacity-50 '>
                     <img src='https://www.incimages.com/uploaded_files/image/1024x576/getty_494605768_2000133320009280151_316966.jpg' className="" alt="" />
                    {/*  <div>
                         <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>

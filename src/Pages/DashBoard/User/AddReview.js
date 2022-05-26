@@ -26,7 +26,7 @@ const AddReview = () => {
                         rating: data.rating,
                         img: img
                     }
-                    fetch('http://localhost:5000/review-post', {
+                    fetch('https://safe-inlet-78940.herokuapp.com/review-post', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

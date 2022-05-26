@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { BsCheck2Circle, BsPersonCircle } from 'react-icons/bs';
 import img1 from '../../assets/images/01.png';
 import img2 from '../../assets/images/02.png';
