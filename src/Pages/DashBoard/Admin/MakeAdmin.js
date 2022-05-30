@@ -5,10 +5,10 @@ import auth from '../../../firebase_init';
 
 const MakeAdmin = () => {
     const [user] = useAuthState(auth);
-    const {email}=user
+    const { email } = user
     const [users, setusers] = useState([])
     useEffect(() => {
-        const url = 'https://safe-inlet-78940.herokuapp.com/user'
+        const url = 'http://localhost:5000/user'
         fetch(url, {
             method: 'GET',
             headers: {
@@ -22,17 +22,18 @@ const MakeAdmin = () => {
 
     const makeAdmin = () => {
         //console.log(email);
-        fetch(`https://safe-inlet-78940.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
             .then(res => {
-                if(res.status === 403){
+                if (res.status === 403) {
                     toast.error('Failed to Make an admin');
                 }
-                return res.json()})
+                return res.json()
+            })
             .then(data => {
                 if (data.modifiedCount > 0) {
                     toast.success(`Successfully made an admin`);
@@ -55,7 +56,7 @@ const MakeAdmin = () => {
                     <tbody>
                         {
                             users.map(user =>
-                                <tr>
+                                <tr key={user._id}>
                                     <td>
                                         <div class="flex items-center space-x-3">
                                             <div>
@@ -67,8 +68,7 @@ const MakeAdmin = () => {
                                         {user.email}
                                     </td>
                                     <td className='text-center'>
-                                        {!user.role&&<button onClick={makeAdmin} className='btn btn-sm'>Make Admin</button>}
-                                        <button className='btn btn-sm ml-5'>Delete User</button>
+                                        {!user.role && <button onClick={makeAdmin} className='btn btn-sm'>Make Admin</button>}
                                     </td>
                                 </tr>
                             )

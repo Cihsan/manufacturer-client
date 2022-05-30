@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Pages/AccessUser/Login';
+import AdminPath from './Pages/AccessUser/AdminPath';
 import ProtectedPath from './Pages/AccessUser/ProtectedPath';
 import Register from './Pages/AccessUser/Register';
 import AllBlog from './Pages/AllBlog/AllBlog';
@@ -20,31 +21,31 @@ import Purchase from './Pages/Purchase/Purchase';
 import Header from './Shared/Header';
 
 function App() {
-  const[dark,setDark]=useState(false)
+  const [dark, setDark] = useState(false)
   console.log(dark);
   return (
     <div className="App" data-theme={dark ? "light" : "dark"}>
       <Header dark={dark} setDark={setDark}></Header>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/blogs" element={<AllBlog />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
-        <Route path="/purchase" element={<Purchase/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/purchase/:id" element={<ProtectedPath><Purchase /></ProtectedPath> }></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
 
-        <Route path='/dashboard' element={<ProtectedPath><DashBoard /></ProtectedPath>  }>
+        <Route path='/dashboard' element={<ProtectedPath><DashBoard /></ProtectedPath>}>
           <Route index element={<MyOrders />}></Route>
-          <Route path='add-review' element={<AddReview/>}></Route>
-          <Route path='my-profile' element={<MyProfile/>}></Route>
+          <Route path='add-review' element={<AddReview />}></Route>
+          <Route path='my-profile' element={<MyProfile />}></Route>
           <Route path='add-product' element={<AddProduct />}></Route>
-          <Route path='make-admin' element={<MakeAdmin/>}></Route>
+          <Route path='make-admin' element={<AdminPath><MakeAdmin /></AdminPath>}></Route>
           <Route path='manage-all-orders' element={<ManageAllOrders />}></Route>
-          <Route path='manage-products' element={<ManageProducts/>}></Route>
+          <Route path='manage-products' element={<ManageProducts />}></Route>
 
         </Route>
-        
+
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>

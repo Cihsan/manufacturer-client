@@ -168,9 +168,9 @@ const AllBlog = () => {
                                             </div>
                                         </div>
                                         <div class="mt-2"><Link to="#" class="text-2xl font-bold text-gray-700 hover:underline">How does prototypical inheritance work</Link>
-                                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
-                                                reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+                                            <p class="mt-2 text-gray-600">Prototype is a Javascript built in Property of any function, that is an object <br />
+
+                                            </p>
                                         </div>
                                         <div class="flex items-center justify-between mt-4">
                                             <Link to="#" class="text-blue-500 hover:underline">Read more</Link>

@@ -4,14 +4,14 @@ import 'react-toastify/dist/ReactToastify.css';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://safe-inlet-78940.herokuapp.com/product-get')
+        fetch('http://localhost:5000/product-get')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products])
 
     const deletebtn = id => {
             console.log(id)
-            const url = `https://safe-inlet-78940.herokuapp.com/product-del/${id}`
+            const url = `http://localhost:5000/product-del/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -24,7 +24,7 @@ const ManageProducts = () => {
                         toast('Product Deleted Form Here');
                     }
                     else {
-                        toast.error('Product Deleted Failed');
+                        toast.error('Failed to Delete Product');
                     }
                 })
         
@@ -39,7 +39,7 @@ const ManageProducts = () => {
                     <div class="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {
                             products.map(product =>
-                                <div class="px-6 py-4 rounded-lg bg-accent text-white">
+                                <div key={product._id} class="px-6 py-4 rounded-lg bg-accent text-white">
                                     <div class="avatar">
                                         <div class="rounded mx-auto">
                                             <img src={product.img} alt='' />

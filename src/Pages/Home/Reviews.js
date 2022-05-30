@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('https://safe-inlet-78940.herokuapp.com/review-get')
+        fetch('http://localhost:5000/review-get')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [reviews])
@@ -15,7 +15,7 @@ const Reviews = () => {
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                     {/* 1 card */}
                     {
-                        reviews.slice(-0).reverse().slice(0,6).map(review =>
+                        reviews.slice(-0).reverse().slice(0, 6).map(review =>
                             <div key={review._id} class="relative bg-white py-6 px-6 rounded-xl my-4 shadow-xl">
                                 <div class="mt-8">
                                     <div className='flex items-center'>

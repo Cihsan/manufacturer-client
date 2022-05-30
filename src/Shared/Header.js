@@ -24,9 +24,9 @@ const Header = ({ dark, setDark }) => {
                         <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink to='/home'>Home</NavLink></li>
                             <li><NavLink to='/blogs'>Blogs</NavLink></li>
-                            <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                            {user &&<li><NavLink to='/dashboard'>DashBoard</NavLink></li>}
                             <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
-
+                            {!user && <li><NavLink to='/register'>Register</NavLink></li>}
                             {
                                 user ?
                                     <div class="dropdown dropdown-end">
@@ -49,10 +49,9 @@ const Header = ({ dark, setDark }) => {
                     <ul className="menu menu-horizontal p-0">
                         <li><NavLink to='/home'>Home</NavLink></li>
                         <li><NavLink to='/blogs'>Blogs</NavLink></li>
-                        <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                        {user &&<li><NavLink to='/dashboard'>DashBoard</NavLink></li>}
                         <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
-                        <li><NavLink to='/login'>Login</NavLink></li>
-                        <li><NavLink to='/register'>Register</NavLink></li>
+                        {!user && <li><NavLink to='/register'>Register</NavLink></li>}
                         <label class="swap swap-rotate" onClick={() => setDark(dark)}>
                             {/* this hidden checkbox controls the state */}
                             <input type="checkbox" />
@@ -62,13 +61,13 @@ const Header = ({ dark, setDark }) => {
                         {
                             user ?
                                 <div class="dropdown dropdown-end">
-                                    <label tabindex="0" class="btn btn-ghost avatar">
-                                        <div class="w-10 rounded-full">
+                                    <label tabindex="0" class="btn btn-outline  avatarp pt-1">
+                                        <div class="rounded">
                                             {user.displayName}
                                         </div>
                                     </label>
-                                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><button onClick={logOut}>Sign Out</button></li>
+                                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-glass border-primary border rounded-box w-52">
+                                        <li><button className='underline' onClick={logOut}>Sign Out</button></li>
                                     </ul>
                                 </div>
                                 : <li><NavLink to='/login'>Login</NavLink></li>

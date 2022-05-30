@@ -10,7 +10,7 @@ import img6 from '../../assets/images/06.png';
 const Portfolio = () => {
     return (
         <div className='mx-5 mt-5'>
-            <div class="card w-96 bg-accent text-white">
+            <div class="card w-96 border border-accent">
                 <div class="card-body">
                     <ul class="p-6 divide-y divide-slate-200">
                         {/* Remove top/bottom padding when first/last child */}
@@ -25,27 +25,27 @@ const Portfolio = () => {
                     </ul>
                     <ul className=''>
                         <li><h1 className='text-2xl'>Skills</h1></li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle /> HTML5</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />CSS3</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />Bootstrap</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />Tailwind</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />Javascript</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />ES6</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />React</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />Firebase</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />NodeJS</li>
-                        <li className='flex items-center gap-2'><BsCheck2Circle />MongoDB</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/> HTML5</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>CSS3</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>Bootstrap</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>Tailwind</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>Javascript</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>ES6</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>React</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>Firebase</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>NodeJS</li>
+                        <li className='flex items-center gap-2'><BsCheck2Circle/>MongoDB</li>
                     </ul>
                     <ul className=''>
                         <li className='font-semibold'>My Completed Projects link Below</li>
-                        <li><a className='btn btn-link text-green-500' href='https://electrical-solution-e0837.web.app/'>Electrical Solution</a></li>
-                        <li><a className='btn btn-link text-green-500' href='https://techreview.netlify.app/'>Tech Review</a></li>
+                        <li><a className='btn btn-link text-green-500' rel="noreferrer noopener" target="_blank" href='https://electrical-solution-e0837.web.app/'>Electrical Solution</a></li>
+                        <li><a className='btn btn-link text-green-500' rel="noreferrer noopener" target="_blank" href='https://techreview.netlify.app/'>Tech Review</a></li>
 
                     </ul>
                 </div>
             </div>
 
-<h1 className='text-center text-3xl font-bold'>My Completed Project View</h1>
+            <h1 className='text-center text-3xl font-bold'>My Completed Project View</h1>
             <div className='my-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4'>
                 <div class="card border-4 border-primary text-white">
                     <div class="card-body">
